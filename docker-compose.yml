@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+        apache:
+                build: .
+                image: iotapp_monitoring
+                container_name: iotapp_monitoring
+                restart: always
+                network_mode: bridge
+                ports:
+                        - "8282:80"
