@@ -1,4 +1,3 @@
-//import axios from 'axios';
 var axios = require('axios');
 const express = require('express');
 const admin = require('firebase-admin');
@@ -13,7 +12,6 @@ var uToken = "";
 // Initialize Firebase Admin SDK
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    //https://testemonit-b47a7-default-rtdb.firebaseio.com/Pai/LastRecord.json
     databaseURL: 'https://testemonit-b47a7-default-rtdb.firebaseio.com'
 });
 
@@ -52,11 +50,6 @@ jwtClient.authorize(function(error, tokens) {
 // Define a route to retrieve data from Firebase
 router.get('/', async (req, res) => {
     try {
-        // Get data from Firebase Realtime Database
-        //const snapshot = await admin.database().ref('/Pai/LastRecord').once('value');
-        //const data = snapshot.val();
-
-        //res.json(data);
         var lastRecord = await admin.database().ref('/Pai/LastRecord');
         lastRecord.once('value', function(snapshot) {
             var data = snapshot.val();
@@ -65,8 +58,6 @@ router.get('/', async (req, res) => {
             // Return the data as JSON
             res.json(data);
         });
-        //const response = await axios.get('https://testemonit-b47a7-default-rtdb.firebaseio.com/Pai/LastRecord.json');
-
     } catch (error) {
         console.error(error);
         res.status(500).send(error);
