@@ -4,7 +4,7 @@
 /* ROOT VARIABLES */
 :root {
   --color-primary: #7380ec;
-  --color-danger: #650bdb;
+  --color-danger: #0703e7;
   --color-success: #41f1b6;
   --color-warning: #ffbb55;
   --color-white: #fff;
@@ -250,7 +250,7 @@ main .insights > div span {
   font-size: 2rem;
 }
 main .insights > div.expenses span {
-  background: var(--color-danger);
+  background: var(--color-warning);
 }
 main .insights > div.income span {
   background: var(--color-success);
