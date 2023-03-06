@@ -1,0 +1,6 @@
+/iot_api_server/.idea/
+/iot_api_server/node_modules/
+/iot_api_server/testemonit-b47a7-firebase-adminsdk-pzfoa-68816bac30.json
+/iot_api_server/build/
+/iot_api_server/*.log
+/iot_api_server/npm-debug.log
